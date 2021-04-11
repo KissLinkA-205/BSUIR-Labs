@@ -84,7 +84,7 @@ d ./build/Debug</br>
 По получению SIGINT (Ctrl-C) отправляет дочернему процессу SIGUSR2 дожидается его завершения, сообщает об этом и выходит. Дочерний процесс открывает временный файл (tmpfile()), устанавливает обработчики сигналов SIGALRM, SIGUSR1, SIGUSR2 и заводит будильник, например, на 1 с. По срабатыванию будильника записывает в файл и перезапускает будильник. </br></br>
 По приходу SIGUSR1 выводит информацию о текущем размере или количестве записей в файл и продолжает работу. </br>
 По приходу SIGUSR2 закрывает файл (он удалится), выводит информацию о своем завершении и завершается.</br></details></ul></details>
- + [EN: Cross Platform Programming `Java` <br/>RU: Кросс-платформенное программирование](https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/KPP%20(Project))<details close> <summary> Progect </summary> Лабораторные работы по языку Java (создание проекта) - Introduction to Cross-Platform Programming on Java</br>
+ + [EN: Cross Platform Programming `Java` <br/>RU: Кросс-платформенное программирование](https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/KPP%20(Project))<details close> <summary> Project </summary> Лабораторные работы по языку Java (создание проекта) - Introduction to Cross-Platform Programming on Java</br>
  P.S. Все авторские права на предоставленные ниже условия лабораторных работ принадлежат компании [EPAM](https://www.epam.com/)</br></br>
 **1. Intro**</br>
 1 - Создать и запустить локально простейший веб/REST сервис, используя любой открытый пример с использованием Java stack: Spring (Spring Boot)/maven/gradle/Jersey/ Spring MVC.</br>  2 - Добавить GET ендпоинт, принимающий входные параметры в качестве queryParams в URL и возвращающий результат в виде JSON согласно варианту. </br></br>
