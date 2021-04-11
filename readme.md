@@ -50,7 +50,7 @@
 •	регистр масок.</br>
 При этом значения регистров должны выводиться всегда в одно и то же место экрана.</br></br>
 2 -	Осуществлять переход на стандартные обработчики аппаратных прерываний, для обеспечения нормальной работы компьютера.</br></details></ul></details>
- + [EN: System software of computers<br/>RU: Системное программное обеспечение вычислительных машин](https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SPOVM) <details close> <summary> Labs </summary><ul><details close><summary> [ ▫️ Lab 1](https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SPOVM/Lab_1) </summary> Лабораторная №1 — Создание дочернего процесса</br></br>
+ + [EN: System Software of Computers<br/>RU: Системное программное обеспечение вычислительных машин](https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SPOVM) <details close> <summary> Labs </summary><ul><details close><summary> [ ▫️ Lab 1](https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SPOVM/Lab_1) </summary> Лабораторная №1 — Создание дочернего процесса</br></br>
 Системные вызовы:</br></br>
 fork() — создает дочерний процесс</br>
 execve() — выполнить программу</br>
