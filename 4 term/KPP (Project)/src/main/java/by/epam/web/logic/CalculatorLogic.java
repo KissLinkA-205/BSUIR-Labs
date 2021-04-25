@@ -5,12 +5,15 @@ import by.epam.web.entity.CalculableParameters;
 import by.epam.web.exeptions.IllegalArgumentsException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorLogic {
-    private static final Logger logger = LogManager.getLogger(CalculatorController.class);
-    CalculatorHash hashMap = new CalculatorHash();
+    private static final Logger logger = LogManager.getLogger(CalculatorLogic.class);
+
+    @Autowired
+    private CalculatorHash hashMap;
     private static final int TEN = 10;
 
     public int calculateResult(CalculableParameters requestParameters) throws IllegalArgumentsException {

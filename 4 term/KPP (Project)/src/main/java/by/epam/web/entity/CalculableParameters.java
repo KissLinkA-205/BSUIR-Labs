@@ -9,6 +9,11 @@ public class CalculableParameters {
         this.action = "empty";
     }
 
+    public CalculableParameters(int number, String action) {
+        this.number = number;
+        this.action = action;
+    }
+
     public void setNumber(int number) {
         this.number = number;
     }

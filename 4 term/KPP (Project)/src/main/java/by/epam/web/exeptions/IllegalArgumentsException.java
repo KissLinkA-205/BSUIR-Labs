@@ -7,4 +7,15 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class IllegalArgumentsException extends Exception{
     public IllegalArgumentsException() {
     }
+    public IllegalArgumentsException(String message) {
+        super(message);
+    }
+
+    public IllegalArgumentsException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public IllegalArgumentsException(Throwable cause) {
+        super(cause);
+    }
 }
