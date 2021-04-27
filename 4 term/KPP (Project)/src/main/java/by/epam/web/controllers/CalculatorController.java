@@ -7,19 +7,22 @@ import by.epam.web.logic.CalculatorLogic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+import javax.validation.Valid;
 import java.util.LinkedList;
 import java.util.List;
 
 @Controller
+@ControllerAdvice
 public class CalculatorController {
     private static final Logger logger = LogManager.getLogger(CalculatorController.class);
     @Autowired
@@ -44,34 +47,34 @@ public class CalculatorController {
     }
 
     @PostMapping("/calculator")
-    public ResponseEntity<?> bulkParams(@RequestBody List<CalculableParameters> bodyList) {
-        List<Integer> copyList = new LinkedList<>();
+    public ResponseEntity<?> bulkParams(@Valid @RequestBody List<CalculableParameters> bodyList) {
 
-        bodyList.forEach((tmp) -> {
+        List<Integer> resultList = new LinkedList<>();
+        logger.info("ostMapping");
+        bodyList.forEach((currentElement) -> {
             try {
-                copyList.add(calculatorLogic.calculateResult(tmp));
+                resultList.add(calculatorLogic.calculateResult(currentElement));
             } catch (IllegalArgumentsException e) {
                 logger.error("Error in postMapping");
             }
         });
+
         logger.info("Successfully postMapping");
 
-        int sumResult = copyList
-                .stream()
-                .mapToInt(Integer::intValue)
-                .sum();
+        int sumResult = calculatorLogic.calculateSumOfResult(resultList);
+        int maxResult = calculatorLogic.findMaxOfResult(resultList);
+        int minResult = calculatorLogic.findMinOfResult(resultList);
 
-        int maxResult = copyList
-                .stream()
-                .mapToInt(Integer::intValue)
-                .max().getAsInt();
-
-        int minResult = copyList
-                .stream()
-                .mapToInt(Integer::intValue)
-                .min().getAsInt();
-
-        return new ResponseEntity<>(copyList + "\nСумма: " + sumResult + "\nМаксимальный результат: " +
+        return new ResponseEntity<>(resultList + "\nСумма: " + sumResult + "\nМаксимальный результат: " +
                 maxResult + "\nМинимальный результат: " + minResult, HttpStatus.OK);
     }
+    
+    //@ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "CUSTOM MESSAGE HERE")
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<?> handleException() {
+        logger.info("handleException");
+        return new ResponseEntity<>("400 Error!", HttpStatus.BAD_REQUEST);
+    }
+
+
 }

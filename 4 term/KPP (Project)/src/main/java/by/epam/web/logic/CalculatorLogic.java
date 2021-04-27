@@ -1,12 +1,13 @@
 package by.epam.web.logic;
 
-import by.epam.web.controllers.CalculatorController;
 import by.epam.web.entity.CalculableParameters;
 import by.epam.web.exeptions.IllegalArgumentsException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CalculatorLogic {
@@ -64,5 +65,29 @@ public class CalculatorLogic {
 
     public int minus_10(int number) {
         return number - TEN;
+    }
+
+    public int calculateSumOfResult(List<Integer> resultList) {
+        int sum = 0;
+        if (!resultList.isEmpty()) {
+            sum = resultList.stream().mapToInt(Integer::intValue).sum();
+        }
+        return sum;
+    }
+
+    public int findMinOfResult(List<Integer> resultList) {
+        int min = 0;
+        if (!resultList.isEmpty()) {
+            min = resultList.stream().mapToInt(Integer::intValue).max().getAsInt();
+        }
+        return min;
+    }
+
+    public int findMaxOfResult(List<Integer> resultList) {
+        int max = 0;
+        if (!resultList.isEmpty()) {
+            max = resultList.stream().mapToInt(Integer::intValue).min().getAsInt();
+        }
+        return max;
     }
 }

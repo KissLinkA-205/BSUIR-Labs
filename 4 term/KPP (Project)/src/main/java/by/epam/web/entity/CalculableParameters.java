@@ -1,7 +1,13 @@
 package by.epam.web.entity;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
+
 public class CalculableParameters {
+    @NotEmpty(message = "Please provide a name")
+    @DecimalMin("-57.00")
     private int number;
+    @NotEmpty(message = "Please provide a name")
     private String action;
 
     public CalculableParameters() {
@@ -50,7 +56,7 @@ public class CalculableParameters {
 
     @Override
     public String toString() {
-        return "\n" + getClass().getName() + "{" +
+        return "\n" + getClass().getSimpleName() + "{" +
                 "number=" + number +
                 ", action='" + action + "}";
     }
