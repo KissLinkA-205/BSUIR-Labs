@@ -4,10 +4,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 
 public class CalculableParameters {
-    @NotEmpty(message = "Please provide a name")
-    @DecimalMin("-57.00")
     private int number;
-    @NotEmpty(message = "Please provide a name")
     private String action;
 
     public CalculableParameters() {
