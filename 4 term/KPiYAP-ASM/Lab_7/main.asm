@@ -365,15 +365,15 @@ FindNumber_continue:
     
 FindNumber_skipSpaces:
     inc si
-    cmp si, ' '
-    je FindNumber_skipSpaces
+    cmp [si], ' '
+    je OutputWrongInput
     
 FindNumber_afterSpaces:
     cmp [si], '-'
-    jne FindNumber_onlyNumer
+    jne FindNumber_onlyNumber
     movsb
 
-FindNumber_onlyNumer:
+FindNumber_onlyNumber:
     cmp [si], ' '
     je FindNumber_end
     cmp [si], '$'
@@ -386,7 +386,7 @@ FindNumber_onlyNumer:
     jg OutputWrongInput
     
     movsb
-    jmp FindNumber_onlyNumer 
+    jmp FindNumber_onlyNumber 
     
 FindNumber_end:
     mov di, offset string
@@ -399,12 +399,12 @@ FindNumber_end:
     pop si       
     
 FindOperation:
-    dec si
+    ;dec si
    
 FindOperation_skipSpaces:
     inc si
     cmp [si], ' '
-    je FindOperation_skipSpaces
+    je OutputWrongInput
     
 FindOperation_afterSpaces:
     cmp [si], '*'
@@ -509,6 +509,9 @@ FindOperation_addToStackWithoutChanges:
     jmp FindNumber    
     
 CalculateExpression_end:
+    mov si, offset mathematical_expression
+    cmp [si], 0
+    je call Exit 
     ret
 CalculateExpression endp
 
