@@ -20,7 +20,7 @@
                 db '*', '*', ' ', 20h
                 
     ASCIITableU db '*', '*', "!@#$%^&*()_+", '*', 09h
-                db "QWERTYUIOP{}", '*', '*' 
+                db "QWERTYUIOP{}", 0Dh, '*' 
                 db 'ASDFGHJKL:"~', '*', "|ZXCVBNM<>?" 
                 db '*', '*', ' ', 20h           
     
