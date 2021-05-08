@@ -207,7 +207,7 @@ getASCII endp
 start:
     mov ax, @data
     mov ds, ax
-    ;mov es, ax
+    mov es, ax
     
     mov ah,0f1h ;check if program is already resident
     mov al,0          
