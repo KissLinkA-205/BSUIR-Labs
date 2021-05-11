@@ -20,6 +20,9 @@ private slots:
     void participantLeft(const QString &nick);
     void on_connectButton_clicked();
 
+signals:
+    void disconnected();
+
 private:
     Client client;
     QString myNickName;

@@ -8,7 +8,9 @@ ChatDialog::ChatDialog(QWidget *parent)
     setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    inputMessage->setFocusPolicy(Qt::StrongFocus);
+    //sendButton->setFocus();
+    //inputMessage->setFocusPolicy(Qt::StrongFocus);
+    //connectButton->setFocus();
     textEdit->setFocusPolicy(Qt::NoFocus);
 
     inputMessage->setDisabled(true);
@@ -17,6 +19,13 @@ ChatDialog::ChatDialog(QWidget *parent)
 
     connect(inputMessage, &QLineEdit::returnPressed,
             this, &ChatDialog::returnPressed);
+    connect(&client, &Client::newMessage,
+            this, &ChatDialog::appendMessage);
+    connect(&client, &Client::newParticipant,
+            this, &ChatDialog::newParticipant);
+    connect(&client, &Client::participantLeft,
+            this, &ChatDialog::participantLeft);
+
     tableFormat.setBorder(0);
 }
 
@@ -25,7 +34,7 @@ void ChatDialog::on_connectButton_clicked()
     if (nickName->text().isEmpty())
         return;
 
-    client.set(nickName->text());
+    client.setParameters(nickName->text());
     myNickName = nickName->text();
     newParticipant(myNickName);
 
@@ -35,12 +44,8 @@ void ChatDialog::on_connectButton_clicked()
     nickName->setDisabled(true);
     connectButton->setDisabled(true);
 
-    connect(&client, &Client::newMessage,
-            this, &ChatDialog::appendMessage);
-    connect(&client, &Client::newParticipant,
-            this, &ChatDialog::newParticipant);
-    connect(&client, &Client::participantLeft,
-            this, &ChatDialog::participantLeft);
+    inputMessage->setFocusPolicy(Qt::StrongFocus);
+    listWidget->item(0)->setForeground(Qt::blue);
 }
 
 void ChatDialog::appendMessage(const QString &from, const QString &message)
@@ -50,9 +55,16 @@ void ChatDialog::appendMessage(const QString &from, const QString &message)
 
     QTextCursor cursor(textEdit->textCursor());
     cursor.movePosition(QTextCursor::End);
-    QTextTable *table = cursor.insertTable(1, 2, tableFormat);
-    table->cellAt(0, 0).firstCursorPosition().insertText('<' + from + "> ");
-    table->cellAt(0, 1).firstCursorPosition().insertText(message);
+    if (from == nickName->text()) {
+
+        textEdit->setTextColor(Qt::blue);
+        textEdit->append('<' + from + "> " + message);
+
+    } else {
+        QTextTable *table = cursor.insertTable(1, 2, tableFormat);
+        table->cellAt(0, 0).firstCursorPosition().insertText('<' + from + "> ");
+        table->cellAt(0, 1).firstCursorPosition().insertText(message);
+    }
     QScrollBar *bar = textEdit->verticalScrollBar();
     bar->setValue(bar->maximum());
 }

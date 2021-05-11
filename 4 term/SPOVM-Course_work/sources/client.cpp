@@ -9,7 +9,7 @@ Client::Client()
 
 }
 
-void Client::set(QString username) {
+void Client::setParameters(QString username) {
     this->username = username;
     peerManager = new PeerManager(this);
     peerManager->setServerPort(server.serverPort());

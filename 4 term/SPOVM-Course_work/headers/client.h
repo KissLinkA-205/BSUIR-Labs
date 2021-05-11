@@ -19,7 +19,7 @@ public:
     void sendMessage(const QString &message);
     QString nickName() const;
     bool hasConnection(const QHostAddress &senderIp, int senderPort = -1) const;
-    void set(QString username);
+    void setParameters(QString username);
 
     QString username;
 
