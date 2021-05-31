@@ -78,7 +78,7 @@ public class CalculatorLogic {
     public int findMinOfResult(List<Integer> resultList) {
         int min = 0;
         if (!resultList.isEmpty()) {
-            min = resultList.stream().mapToInt(Integer::intValue).max().getAsInt();
+            min = resultList.stream().mapToInt(Integer::intValue).min().getAsInt();
         }
         return min;
     }
@@ -86,7 +86,7 @@ public class CalculatorLogic {
     public int findMaxOfResult(List<Integer> resultList) {
         int max = 0;
         if (!resultList.isEmpty()) {
-            max = resultList.stream().mapToInt(Integer::intValue).min().getAsInt();
+            max = resultList.stream().mapToInt(Integer::intValue).max().getAsInt();
         }
         return max;
     }
