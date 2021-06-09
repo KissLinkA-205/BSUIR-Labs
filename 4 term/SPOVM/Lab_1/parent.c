@@ -7,18 +7,19 @@
 
 int main()
 {
-    fprintf(stdout, "Parent process is running...\n");
+    fprintf(stdout, "PARENT: Parent process is running...\n");
     int status;
     pid_t pid;
+    char **argv = NULL;
     pid = fork();
     if(pid == -1) {
-        fprintf(stdout, "Error - %d\n", errno);
+        fprintf(stdout, "PARENT: Error - %d\n", errno);
     }
     if(pid == 0) {
-        execve("./child", NULL, NULL);
+        execve("./child", argv, NULL);
     }
     wait(&status);
-    fprintf(stdout,"Child process exited with code %d\n", status);
-    fprintf(stdout,"Parent process is running...\n");
+    fprintf(stdout,"PARENT: Child process exited with code %d\n", status);
+    fprintf(stdout,"PARENT: Parent process is running...\n");
     exit(0);
 }
