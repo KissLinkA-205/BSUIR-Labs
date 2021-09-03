@@ -15,7 +15,32 @@ P.S. Все авторские права на предоставленные н
  <li>
   <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/KPP%20(Project)" rel="nofollow">
    EN: Cross Platform Programming <code>Java</code> <br>
-   RU: Кросс-платформенное программирование</a>
+   RU: Кросс-платформенное программирование<br>
+   Project (Проект)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/KPiYAP-ASM" rel="nofollow">
+   EN: Programming Design and Programming Languages <code>Assembly</code> <br>
+   RU: Конструирование программ и языки программирования<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/APK" rel="nofollow">
+   EN: Personal Computer Architecture <code>C</code> <code>C++</code> <code>Assembly</code> <br>
+   RU: Архитектура персональных компьютеров<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SPOVM" rel="nofollow">
+   EN: System Software of Computers <code>C</code> <code>C++</code><br>
+   RU: Системное программное обеспечение вычислительных машин<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SPOVM-Course_work" rel="nofollow">
+   EN: System Software of Computers <code>C++</code><br>
+   RU: Системное программное обеспечение вычислительных машин<br>
+   Сourse project (Курсовой проект)</a>
  </li>
 </ul>
 
@@ -24,6 +49,7 @@ P.S. Все авторские права на предоставленные н
  <li>
   <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/SiFOEVM" rel="nofollow">
    EN: Structural and Functional Organization of Electronic Computing Machines <br>
-   RU: Структурная и функциональная организация ЭВМ</a>
- </li>
+   RU: Структурная и функциональная организация ЭВМ<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
 </ul>
