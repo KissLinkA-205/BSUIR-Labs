@@ -60,4 +60,10 @@ P.S. Все авторские права на предоставленные н
 </ul>
 
 <h2> 📘 5 term (5 семестр): </h2>
-
+<ul>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/SiFOEVM" rel="nofollow">
+   EN: Structural and Functional Organization of Electronic Computing Machines <br>
+   RU: Структурная и функциональная организация ЭВМ</a>
+ </li>
+</ul>
