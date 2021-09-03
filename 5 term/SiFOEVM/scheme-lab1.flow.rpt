@@ -1,0 +1,120 @@
+Flow report for scheme-lab1
+Fri Sep 03 17:43:20 2021
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Flow Summary                                                            ;
++-------------------------------+-----------------------------------------+
+; Flow Status                   ; Successful - Fri Sep 03 17:43:20 2021   ;
+; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Web Edition ;
+; Revision Name                 ; scheme-lab1                             ;
+; Top-level Entity Name         ; lab1                                    ;
+; Family                        ; Stratix II                              ;
+; Met timing requirements       ; Yes                                     ;
+; Logic utilization             ; < 1 %                                   ;
+;     Combinational ALUTs       ; 0 / 12,480 ( 0 % )                      ;
+;     Dedicated logic registers ; 7 / 12,480 ( < 1 % )                    ;
+; Total registers               ; 7                                       ;
+; Total pins                    ; 16 / 343 ( 5 % )                        ;
+; Total virtual pins            ; 0                                       ;
+; Total block memory bits       ; 0 / 419,328 ( 0 % )                     ;
+; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                          ;
+; Total PLLs                    ; 0 / 6 ( 0 % )                           ;
+; Total DLLs                    ; 0 / 2 ( 0 % )                           ;
+; Device                        ; EP2S15F484C3                            ;
+; Timing Models                 ; Final                                   ;
++-------------------------------+-----------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 09/03/2021 17:43:12 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; scheme-lab1         ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                    ;
++------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 110352848026011.163068019214596 ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                        ; --            ; lab1        ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; lab1        ; Top            ;
+; TOP_LEVEL_ENTITY                   ; lab1                            ; scheme-lab1   ; --          ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+---------------------------------+---------------+-------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 219 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:02     ; 1.0                     ; 284 MB              ; 00:00:03                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 243 MB              ; 00:00:01                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 173 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
++-------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++-------------------------+------------------+---------------+------------+----------------+
+; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++-------------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis    ; DESKTOP-DJR5M81  ; Windows Vista ; 6.2        ; x86_64         ;
+; Fitter                  ; DESKTOP-DJR5M81  ; Windows Vista ; 6.2        ; x86_64         ;
+; Assembler               ; DESKTOP-DJR5M81  ; Windows Vista ; 6.2        ; x86_64         ;
+; Classic Timing Analyzer ; DESKTOP-DJR5M81  ; Windows Vista ; 6.2        ; x86_64         ;
++-------------------------+------------------+---------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off lab1 -c scheme-lab1
+quartus_fit --read_settings_files=off --write_settings_files=off lab1 -c scheme-lab1
+quartus_asm --read_settings_files=off --write_settings_files=off lab1 -c scheme-lab1
+quartus_tan --read_settings_files=off --write_settings_files=off lab1 -c scheme-lab1 --timing_analysis_only
+
+
+
