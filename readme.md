@@ -52,4 +52,16 @@ P.S. Все авторские права на предоставленные н
    RU: Структурная и функциональная организация ЭВМ<br>
    Laboratory works (Лабораторные работы)</a>
  </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/TOKS" rel="nofollow">
+   EN: Theoretical Foundations of Computer Networks <code>Java</code><br>
+   RU: Теоретические основы компьютерных сетей<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/IiPU" rel="nofollow">
+   EN: Interfaces and Peripheral Devices <code>C++</code><br>
+   RU: Интерфейсы и периферийные устройства<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
 </ul>
