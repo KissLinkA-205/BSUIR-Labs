@@ -41,6 +41,12 @@ P.S. Все авторские права на предоставленные н
    EN: System Software of Computers <code>C++</code><br>
    RU: Системное программное обеспечение вычислительных машин<br>
    Сourse project (Курсовой проект)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/4%20term/SchemT" rel="nofollow">
+   EN: Circuit Design<br>
+   RU: Схемотехника<br>
+   Laboratory works (Лабораторные работы)</a>
  </li>
 </ul>
 
@@ -48,7 +54,7 @@ P.S. Все авторские права на предоставленные н
 <ul>
  <li>
   <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/SiFOEVM" rel="nofollow">
-   EN: Structural and Functional Organization of Electronic Computing Machines <br>
+   EN: Structural and Functional Organization of Electronic Computing Machines <code>Quartus II</code><br>
    RU: Структурная и функциональная организация ЭВМ<br>
    Laboratory works (Лабораторные работы)</a>
  </li><br>
@@ -64,4 +70,22 @@ P.S. Все авторские права на предоставленные н
    RU: Интерфейсы и периферийные устройства<br>
    Laboratory works (Лабораторные работы)</a>
  </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/SchemT-Course_work" rel="nofollow">
+   EN: Circuit Design <code>Arduino</code><br>
+   RU: Схемотехника<br>
+   Сourse project (Курсовой проект)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/SchemT" rel="nofollow">
+   EN: Circuit Design<br>
+   RU: Схемотехника<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/5%20term/OZI" rel="nofollow">
+   EN: Fundamentals of Information Security<br>
+   RU: Основы защиты информации<br>
+   Practical works (Практические работы)</a>
+ </li>
 </ul>
