@@ -10,6 +10,16 @@ P.S. Все авторские права на предоставленные н
 </h4>
 <hr align="center">
 
+<h2> 📘 3 term (3 семестр): </h2>
+<ul>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/3%20term/EP" rel="nofollow">
+   EN: Electronic devices<br>
+   RU: Электронные приборы<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li>
+</ul>
+ 
 <h2> 📘 4 term (4 семестр): </h2>
 <ul>
  <li>
