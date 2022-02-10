@@ -14,9 +14,21 @@ P.S. Все авторские права на предоставленные н
 <ul>
  <li>
   <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/3%20term/EP" rel="nofollow">
-   EN: Electronic devices<br>
+   EN: Electronic Devices<br>
    RU: Электронные приборы<br>
    Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/3%20term/TES" rel="nofollow">
+   EN: Theory of Electrical Circuits<br>
+   RU: Теория электрических цепей<br>
+   Laboratory works (Лабораторные работы)</a>
+ </li><br>
+ <li>
+  <a href="https://github.com/KissLinkA-205/BSUIR-Labs/tree/main/3%20term/TES-Typical_calculations" rel="nofollow">
+   EN: Theory of Electrical Circuits<br>
+   RU: Теория электрических цепей<br>
+   Typical calculations (Типовые расчеты)</a>
  </li>
 </ul>
  
