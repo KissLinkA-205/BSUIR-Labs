@@ -1,0 +1,155 @@
+Microsoft Windows [Version 10.0.19044.2251]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+D:\PostgreSQL\14\bin>psql -U postgres Tourist_Agency
+Password for user postgres:
+psql (14.5)
+WARNING: Console code page (866) differs from Windows code page (1251)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+Tourist_Agency=# \! chcp 65001
+Active code page: 65001
+Tourist_Agency=# set client_encoding='utf-8';
+SET
+Tourist_Agency=# SELECT orders.status "Status", orders.issue_date "Issue date", orders.total_cost "Total cost",
+Tourist_Agency-#
+Tourist_Agency-# clients.email "Email", tours.title "Tour title", tours.country "Country",
+Tourist_Agency-#
+Tourist_Agency-# tours.adults_number "Adults number", tours.children_number "Children number"
+Tourist_Agency-#
+Tourist_Agency-# FROM public.orders
+Tourist_Agency-# INNER JOIN public.clients ON clients.id = orders.client_id
+Tourist_Agency-# INNER JOIN public.tours ON tours.id = orders.tour_id
+Tourist_Agency-# ORDER BY tours.title ASC;
+     Status     | Issue date | Total cost |           Email           |           Tour title            |  Country  | Adults number | Children number
+----------------+------------+------------+---------------------------+---------------------------------+-----------+---------------+-----------------
+ подтвержден    | 2022-11-19 |   980,00 ? | katya.novikova7@gmail.com | Горнолыжный курорт Буковель     | Украина   |             2 |               0
+ отменен        | 2022-11-22 |   830,00 ? | 9emilia_b@tut.by          | Горнолыжный курорт Буковель     | Украина   |             2 |               0
+ отменен        | 2022-11-20 |   140,00 ? | m.karpov67@gmail.com      | Горнолыжный центр Силичи        | Беларусь  |             1 |               0
+ подтвержден    | 2022-11-23 | 1 200,00 ? | nastia2.astap@tut.by      | Незабываемый отдых на Шри-Ланке | Шри-Ланка |             1 |               0
+ отменен        | 2022-11-14 | 1 260,00 ? | polinak@gmail.com         | Незабываемый отдых на Шри-Ланке | Шри-Ланка |             1 |               0
+ подтвержден    | 2022-11-15 | 1 260,00 ? | polinak@gmail.com         | Незабываемый отдых на Шри-Ланке | Шри-Ланка |             1 |               0
+ завершен       | 2022-10-23 | 1 580,00 ? | katya.novikova7@gmail.com | Незабываемый тур в Турцию       | Турция    |             2 |               0
+ завершен       | 2022-09-12 | 1 500,00 ? | alex.popov@mail.ru        | Незабываемый тур в Турцию       | Турция    |             2 |               0
+ завершен       | 2022-10-16 | 1 500,00 ? | ivan_b@gmail.com          | Незабываемый тур в Турцию       | Турция    |             2 |               0
+ обрабатывается | 2022-11-27 | 1 930,00 ? | 9emilia_b@tut.by          | Отдых в Батуми                  | Грузия    |             2 |               1
+ завершен       | 2022-11-04 |   660,00 ? | sokolov.g@gmail.com       | Путешествие в Египет            | Египет    |             1 |               0
+ завершен       | 2022-11-01 |   700,00 ? | nastia2.astap@tut.by      | Путешествие в Египет            | Египет    |             1 |               0
+ в процессе     | 2022-11-15 |   660,00 ? | y.vas45@mail.ru           | Путешествие в Египет            | Египет    |             1 |               0
+ в процессе     | 2022-11-02 |   210,00 ? | pyanysh@mail.ru           | Санаторий Плисса                | Беларусь  |             1 |               0
+ обрабатывается | 2022-11-28 |   103,00 ? | ivan_b@gmail.com          | Экскурсия по Несвижскому замоку | Беларусь  |             1 |               0
+ подтвержден    | 2022-11-28 |   103,00 ? | ivan_b@gmail.com          | Экскурсия по Несвижскому замоку | Беларусь  |             1 |               0
+(16 rows)
+
+
+Tourist_Agency=# SELECT tours.title "Tour title", tours.price "Price", reviews.rating "Rating", clients.name "Name",
+Tourist_Agency-#
+Tourist_Agency-# clients.surname "Surname", reviews.text "Text", reviews.adding_date "Adding date"
+Tourist_Agency-#
+Tourist_Agency-# FROM public.tours
+Tourist_Agency-# INNER JOIN public.reviews ON reviews.tour_id = tours.id
+Tourist_Agency-# INNER JOIN public.clients ON clients.id = reviews.client_id
+Tourist_Agency-# ORDER BY tours.title ASC;
+        Tour title         |   Price    | Rating |   Name    |  Surname  |                                                          Text                                                          | Adding date
+---------------------------+------------+--------+-----------+-----------+------------------------------------------------------------------------------------------------------------------------+-------------
+ Незабываемый тур в Турцию | 1 200,00 ? |      8 | Александр | Попов     | Мы с женой прекрасно отдохнули, обслуживание на уровне. Не понравился только переезд из-за того, что отменили самолет. | 2022-11-21
+ Незабываемый тур в Турцию | 1 200,00 ? |      3 | Екатерина | Новикова  | Своих денег точно не стоит. Цена неимоверна завышена.                                                                  | 2022-11-22
+ Незабываемый тур в Турцию | 1 200,00 ? |     10 | Иван      | Быков     | Хороший отель, море очень близко, каждый день разная еда. Определенно съезжу в этот тур еще раз.                       | 2022-11-24
+ Путешествие в Египет      |   500,00 ? |     10 | Анастасия | Астапенко | Очень доволен поездкой. Всем советую съездить в этот тур!                                                              | 2022-11-22
+ Путешествие в Египет      |   500,00 ? |      7 | Глеб      | Соколов   | Довольно неплохой бюджетный вариант.                                                                                   | 2022-11-28
+(5 rows)
+
+
+Tourist_Agency=# SELECT tours.title "Tour title", tours.category "Tour category", hotels.title "Hotel title", hotels.stars "Stars",
+Tourist_Agency-#
+Tourist_Agency-# hotels.type "Hotel type", hotels.contact_email "Contact email", hotels.contact_phone "Contact phone"
+Tourist_Agency-#
+Tourist_Agency-# FROM public.tours
+Tourist_Agency-# INNER JOIN public.tours_hotels ON tours_hotels.tour_id = tours.id
+Tourist_Agency-# INNER JOIN public.hotels ON hotels.id = tours_hotels.hotel_id
+Tourist_Agency-# ORDER BY tours.title ASC;
+           Tour title            |  Tour category  |            Hotel title            | Stars |     Hotel type      |       Contact email       | Contact phone
+---------------------------------+-----------------+-----------------------------------+-------+---------------------+---------------------------+----------------
+ Горнолыжный курорт Буковель     | горнолыжный     | F&B Spa Resort (ex. Fomich Hotel) |     5 | семейный номер      | fbspa.resort@gmail.com    | +380999134159
+ Незабываемый отдых на Шри-Ланке | пляжный         | RAMON BEACH                       |     4 | комфортная комната  | ramon.beach@gmail.com     | +94914944700
+ Незабываемый тур в Турцию       | пляжный         | The Marmara Bodrum - Adult Only   |     5 | стандартная комната | marma.bodr@gmail.com      | +902427536391
+ Отдых в Батуми                  | пляжный         | UNION                             |     3 | стандартная комната | union@gmail.com           | +995558555708
+ Отдых в Египте                  | пляжный         | Le Meridien Cairo Airport         |     5 | стандартная комната | meredien.cairo@gmail.com  | +20693982345
+ Путешествие в Болгарию          | пляжный         | HOT SPRINGS MEDICAL AND SPA HOTEL |     4 | стандартная комната | hot.springs@gmail.com     | +359888337337
+ Путешествие в Египет            | пляжный         | Amar Sina Egyptian Village        |     3 | стандартная комната | amarsinavillage@gmail.com | +20 69 3662222
+ Санаторий Плисса                | оздоровительный | Плисса                            |     5 | номер для двоих     | plissa@gmail.com          | 80445634732
+(8 rows)
+
+
+Tourist_Agency=# SELECT tours.title "Tour title", tours.category "Tour category", tours.price "Tour price",
+Tourist_Agency-#
+Tourist_Agency-# transports.type "Type", transports.price "Transport price",
+Tourist_Agency-#
+Tourist_Agency-# transports.departure_date "Departure date", transports.departure_place "Departure place"
+Tourist_Agency-#
+Tourist_Agency-# FROM public.tours
+Tourist_Agency-# INNER JOIN public.tours_transports ON tours_transports.tour_id = tours.id
+Tourist_Agency-# INNER JOIN public.transports ON transports.id = tours_transports.transport_id
+Tourist_Agency-# ORDER BY tours.title ASC;
+           Tour title            |  Tour category  | Tour price |  Type   | Transport price | Departure date |        Departure place
+---------------------------------+-----------------+------------+---------+-----------------+----------------+-------------------------------
+ Горнолыжный курорт Буковель     | горнолыжный     |   780,00 ? | автобус |         50,00 ? | 2023-01-03     | Автостанция Минск
+ Горнолыжный курорт Буковель     | горнолыжный     |   780,00 ? | самолет |        100,00 ? | 2023-01-06     | Минский национальный аэрапорт
+ Горнолыжный центр Силичи        | горнолыжный     |   120,00 ? | автобус |         40,00 ? | 2022-12-31     | Автостанция Гродно
+ Горнолыжный центр Силичи        | горнолыжный     |   120,00 ? | автобус |         15,00 ? | 2022-12-26     | Автостанция Минск
+ Горнолыжный центр Силичи        | горнолыжный     |   120,00 ? | автобус |         12,00 ? | 2022-12-27     | Автостанция Минск
+ Горнолыжный центр Силичи        | горнолыжный     |   120,00 ? | автобус |         20,00 ? | 2022-12-29     | Автостанция Минск
+ Горнолыжный центр Силичи        | горнолыжный     |   120,00 ? | автобус |         25,00 ? | 2022-12-31     | Автостанция Минск
+ Незабываемый отдых на Шри-Ланке | пляжный         | 1 000,00 ? | самолет |        200,00 ? | 2023-01-10     | Минский национальный аэрапорт
+ Незабываемый отдых на Шри-Ланке | пляжный         | 1 000,00 ? | самолет |        260,00 ? | 2022-12-31     | Минский национальный аэрапорт
+ Незабываемый тур в Турцию       | пляжный         | 1 200,00 ? | самолет |        150,00 ? | 2022-11-04     | Минский национальный аэрапорт
+ Незабываемый тур в Турцию       | пляжный         | 1 200,00 ? | самолет |        190,00 ? | 2022-11-17     | Минский национальный аэрапорт
+ Отдых в Батуми                  | пляжный         | 1 600,00 ? | самолет |        110,00 ? | 2022-12-12     | Минский национальный аэрапорт
+ Отдых в Батуми                  | пляжный         | 1 600,00 ? | самолет |        120,00 ? | 2022-11-19     | Минский национальный аэрапорт
+ Отдых в Египте                  | пляжный         | 1 310,00 ? | самолет |        210,00 ? | 2022-12-27     | Минский национальный аэрапорт
+ Отдых в Египте                  | пляжный         | 1 310,00 ? | самолет |        160,00 ? | 2022-11-26     | Минский национальный аэрапорт
+ Путешествие в Болгарию          | пляжный         |   800,00 ? | автобус |         60,00 ? | 2023-01-05     | Автостанция Минск
+ Путешествие в Болгарию          | пляжный         |   800,00 ? | самолет |        180,00 ? | 2023-01-06     | Минский национальный аэрапорт
+ Путешествие в Египет            | пляжный         |   500,00 ? | самолет |        200,00 ? | 2022-11-20     | Минский национальный аэрапорт
+ Путешествие в Египет            | пляжный         |   500,00 ? | самолет |        160,00 ? | 2022-11-26     | Минский национальный аэрапорт
+ Путешествие в Египет            | пляжный         |   500,00 ? | самолет |        180,00 ? | 2022-12-01     | Минский национальный аэрапорт
+ Санаторий Плисса                | оздоровительный |   200,00 ? | автобус |         10,00 ? | 2022-11-20     | Автостанция Минск
+ Экскурсия по Несвижскому замоку | экскурсионный   |    80,00 ? | автобус |         18,00 ? | 2023-02-03     | Автостанция Витебск
+ Экскурсия по Несвижскому замоку | экскурсионный   |    80,00 ? | автобус |         23,00 ? | 2023-02-02     | Автостанция Брест
+ Экскурсия по Несвижскому замоку | экскурсионный   |    80,00 ? | автобус |         15,00 ? | 2023-02-01     | Автостанция Минск
+(24 rows)
+
+
+Tourist_Agency=# SELECT passports.number "Passport number", passports.name "Name", passports.surname "Surname",
+Tourist_Agency-#
+Tourist_Agency-# passports.patronymic "Patronymic", passports.birth_date "Birth date", passports.nationality "Nationality",
+Tourist_Agency-#
+Tourist_Agency-# visas.number "Visas number",  visas.country "Country", visas.issue_date "Issue date",
+Tourist_Agency-#
+Tourist_Agency-# visas.expiration_date "Expiration date"
+Tourist_Agency-#
+Tourist_Agency-# FROM public.passports
+Tourist_Agency-# LEFT JOIN public.visas ON visas.passport_id = passports.id
+Tourist_Agency-# ORDER BY passports.name ASC;
+ Passport number |   Name    |   Surname   |  Patronymic   | Birth date | Nationality | Visas number |  Country  | Issue date | Expiration date
+-----------------+-----------+-------------+---------------+------------+-------------+--------------+-----------+------------+-----------------
+ MC2356345       | Александр | Попов       | Васильевич    | 1994-12-30 | Беларусь    |              |           |            |
+ MC6823025       | Алексей   | Балановский | Валерьевна    | 1999-05-22 | Беларусь    |              |           |            |
+ MP2340285       | Анастасия | Астапенко   | Витальевна    | 1997-03-09 | Беларусь    | 749384774    | Шри-Ланка | 2022-11-14 | 2023-01-14
+ MP2340285       | Анастасия | Астапенко   | Витальевна    | 1997-03-09 | Беларусь    | 016911670    | Египет    | 2022-10-15 | 2023-01-15
+ MC5480023       | Антон     | Новиков     | Геннадьевич   | 2000-07-21 | Россия      |              |           |            |
+ MP6893458       | Глеб      | Соколов     | Аристархович  | 1994-10-10 | Беларусь    | 01B234G33    | Египет    | 2022-11-01 | 2023-02-01
+ MC4850234       | Екатерина | Новикова    | Попова        | 1994-12-30 | Беларусь    |              |           |            |
+ MP1102484       | Иван      | Быков       | Петров        | 1992-09-11 | Беларусь    |              |           |            |
+ MC1412384       | Кирилл    | Михед       | Викентьевич   | 1987-11-09 | Казахстан   | 87FJ84359    | Египет    | 2022-10-29 | 2023-01-29
+ MP0714784       | Максим    | Карпов      | Олегович      | 1989-10-11 | Россия      |              |           |            |
+ MC5423432       | Мария     | Попова      | Максимовна    | 1996-01-21 | Беларусь    |              |           |            |
+ ME6924014       | Надежда   | Быкова      | Александровна | 1993-12-15 | Беларусь    |              |           |            |
+ MC1243759       | Павел     | Януш        | Иванович      | 1978-09-15 | Украина     |              |           |            |
+ MK0014123       | Полина    | Кузнецова   | Андреевна     | 1991-11-07 | Беларусь    | H458H4893    | Шри-Ланка | 2022-11-03 | 2023-01-03
+ ME2340023       | Эмилия    | Балановская | Павловна      | 2001-06-05 | Беларусь    |              |           |            |
+ MP8435838       | Юлия      | Балановская | Алексеевна    | 2014-07-14 | Беларусь    |              |           |            |
+ MP6594588       | Ярослав   | Сорока      | Васильевич    | 1987-07-24 | Беларусь    |              |           |            |
+(17 rows)

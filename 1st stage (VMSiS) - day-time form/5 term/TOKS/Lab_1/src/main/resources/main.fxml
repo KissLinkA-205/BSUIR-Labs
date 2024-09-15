@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsuir.lab1.controller.Controller">
+   <children>
+      <AnchorPane layoutX="-6.0" prefHeight="200.0" prefWidth="924.0" style="-fx-background-color: c7eeff;">
+         <children>
+            <TextArea fx:id="input" layoutX="70.0" layoutY="38.0" prefHeight="118.0" prefWidth="760.0" />
+            <Text disable="true" fill="#0c5371" layoutX="408.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="input" textAlignment="CENTER" wrappingWidth="84.409423828125">
+               <font>
+                  <Font name="Arial Black" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="clear_input" layoutX="300.0" layoutY="162.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" text="clear">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <Button fx:id="send" layoutX="457.0" layoutY="162.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" text="send">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-6.0" layoutY="200.0" prefHeight="200.0" prefWidth="924.0" style="-fx-background-color: e5f7ff;">
+         <children>
+            <Text disable="true" fill="#0c5371" layoutX="405.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="output" textAlignment="CENTER" wrappingWidth="90.8094482421875">
+               <font>
+                  <Font name="Arial Black" size="23.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="output" editable="false" layoutX="70.0" layoutY="33.0" prefHeight="118.0" prefWidth="760.0" />
+            <Button fx:id="clear_output" layoutX="379.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" text="clear">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-6.0" layoutY="399.0" prefHeight="226.0" prefWidth="924.0" style="-fx-background-color: e5f7ff;">
+         <children>
+            <Text disable="true" fill="#0c5371" layoutX="337.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="control&amp;debug" textAlignment="CENTER" wrappingWidth="223.60940551757812">
+               <font>
+                  <Font name="Arial Black" size="23.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="transmission speed" textAlignment="CENTER" wrappingWidth="184.00257110595703">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Text>
+            <Text fill="#919090" layoutX="333.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BSUIR: Angelika Derkach - lab1" textAlignment="CENTER" wrappingWidth="231.22268676757812" />
+            <ComboBox fx:id="speed" layoutX="68.0" layoutY="67.0" prefWidth="150.0" promptText="9600" />
+            <TextArea fx:id="debug" editable="false" layoutX="243.0" layoutY="43.0" prefHeight="118.0" prefWidth="586.0" />
+         </children>
+      </AnchorPane>
+      <Line endX="817.0" endY="1.52587890625E-5" layoutX="101.0" layoutY="200.0" startX="-100.0" stroke="#0c5371" />
+      <Line endX="810.0000610351562" layoutX="108.0" layoutY="400.0" startX="-107.99999237060547" stroke="#0c5371" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,105 @@
+autostart = False
+version = 0.8.7
+[127.0.0.1:7200]
+    workingdir = C:\Users\F59E~1\AppData\Local\Temp
+    udp = 10001
+    [[1750]]
+        image = D:\_University_\6 term\AKSiS\lab1\GNS3\c1700-sy-mz.122-15.T17.image
+        chassis = 1750
+    [[ROUTER R1]]
+        model = 1750
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0 = R6 f0
+        x = -121.0
+        y = 173.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = C:\Users\F59E~1\AppData\Local\Temp
+    udp = 10101
+    [[1750]]
+        image = D:\_University_\6 term\AKSiS\lab1\GNS3\c1700-sy-mz.122-15.T17.image
+        ghostios = True
+        chassis = 1750
+    [[ROUTER R4]]
+        model = 1750
+        console = 2104
+        aux = 2504
+        cnfg = configs\R4.cfg
+        wic0/0 = WIC-1ENET
+        e0 = R8 e0
+        f0 = R3 e0
+        x = -412.0
+        y = -165.0
+        z = 1.0
+    [[ROUTER R5]]
+        model = 1750
+        console = 2105
+        aux = 2505
+        cnfg = configs\R5.cfg
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0 = R3 f0
+        e1 = R8 f0
+        f0 = R6 e1
+        x = -174.0
+        y = -49.0
+        z = 1.0
+    [[ROUTER R6]]
+        model = 1750
+        console = 2106
+        aux = 2506
+        cnfg = configs\R6.cfg
+        wic0/0 = WIC-1ENET
+        wic0/1 = WIC-1ENET
+        e0 = R7 e0
+        e1 = R5 f0
+        f0 = R1 f0
+        x = -52.0
+        y = 52.0
+        z = 1.0
+    [[ROUTER R7]]
+        model = 1750
+        console = 2107
+        aux = 2507
+        cnfg = configs\R7.cfg
+        wic0/0 = WIC-1ENET
+        e0 = R6 e0
+        f0 = R2 f0
+        x = 122.0
+        y = 27.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 1750
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0 = R7 f0
+        x = 293.0
+        y = 39.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 1750
+        console = 2103
+        aux = 2503
+        cnfg = configs\R3.cfg
+        wic0/0 = WIC-1ENET
+        e0 = R4 f0
+        f0 = R5 e0
+        x = -347.0
+        y = -56.0
+        z = 1.0
+    [[ROUTER R8]]
+        model = 1750
+        console = 2108
+        aux = 2508
+        cnfg = configs\R8.cfg
+        wic0/0 = WIC-1ENET
+        e0 = R4 e0
+        f0 = R5 e1
+        x = -249.0
+        y = -159.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
